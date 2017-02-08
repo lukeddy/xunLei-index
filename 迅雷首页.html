@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+        }
+
+        #wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+        }
+
+        #wrap a {
+            color: #fff;
+        }
+
+        #list {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        #list li {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: .5s;
+        }
+
+        /*1.active：切换图片*/
+        #list .active {
+            opacity: 1;
+        }
+
+        #list img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #list .text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+        }
+
+        #list li:nth-child(1) .text {
+            left: 0;
+            bottom: 150px;
+        }
+
+        #list li:nth-child(2) .text {
+            left: 0;
+            top: 50px;
+            color: #000;
+        }
+
+        #list li:nth-child(2) .text a {
+            color: #000;
+        }
+
+        #list li:nth-child(3) .text {
+            left: 0;
+            top: 100px;
+
+        }
+
+        #list li:nth-child(4) .text {
+            left: 0;
+            top: 50px;
+        }
+
+        #list .text .small {
+            font: 18px/60px "宋体";
+        }
+
+        #list .text p {
+            font: 40px/60px "宋体";
+            transition: all 1s .5s;
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        /*2.active：切换p*/
+        #list .active p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #list .text div {
+            opacity: 0;
+            width: 100px;
+            margin: 0 auto;
+            padding: 0 5px;
+            font: 18px/24px "宋体";
+            border: 1px solid rgba(255, 255, 255, .5);
+            transition: all 1s 1.5s;
+        }
+
+        #list li:nth-child(2) .text div {
+            border-color: #000;
+        }
+
+        /*3.active：切换div*/
+        #list .active .text div {
+            opacity: 1;
+        }
+
+        #nav {
+            position: absolute;
+            left: 50%;
+            margin-left: -150px;
+            bottom: 50px;
+            width: 300px;
+            height: 100px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+            z-index: 1;
+        }
+
+        #nav a {
+            float: left;
+            width: 20%;
+            margin: 0 2.5%;
+            font: 50px/100px '宋体';
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 255, 255, 0);
+        }
+
+        /*4.active：切换nav下的a*/
+        #nav .active {
+            border-bottom-color: #fff;
+            color: #0f0;
+        }
+
+        #top {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 1;
+        }
+
+        #logo {
+            float: left;
+            width: 156px;
+            height: 70px;
+            padding: 15px 0 15px 40px;
+        }
+
+        #logo a {
+            display: block;
+        }
+
+        #logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #detail {
+            float: right;
+            width: 300px;
+            height: 70px;
+            padding: 15px 40px 15px 0;
+            font: 18px/70px '宋体';
+        }
+
+        #detail li {
+            float: left;
+            width: 80px;
+            margin: 0 10px;
+            text-align: center;
+        }
+
+        #detail a {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <ul id="list">
+        <li>
+            <img src="img/bg_xnet9.jpg" alt="">
+            <div class="text">
+                <p>精彩，一下就有</p>
+                <div><a href="#">迅雷</a></div>
+            </div>
+        </li>
+        <li>
+            <img src="img/bg_shoulei.jpg" alt="">
+            <div class="text">
+                <p>炽热追速之心<br><span class="small">没有Wi-Fi，也挡不住</span></p>
+                <div><a href="#">手机迅雷</a></div>
+            </div>
+        </li>
+        <li>
+            <img src="img/bg_member.jpg" alt="">
+            <div class="text">
+                <p>快，<span class="small">让生活</span>慢<span class="small">下来</span></p>
+                <div><a href="#">迅雷会员</a></div>
+            </div>
+        </li>
+        <li>
+            <img src="img/bg_xav.jpg" alt="">
+            <div class="text">
+                <p>流畅画质，乐无止尽</p>
+                <div><a href="#">迅雷影音</a></div>
+            </div>
+        </li>
+    </ul>
+    <nav id="nav">
+        <a href="#">☆</a>
+        <a href="#">△</a>
+        <a href="#">☝</a>
+        <a href="#">☞</a>
+    </nav>
+    <div id="top">
+        <div id="logo"><a href="#"><img src="img/n_logo.png" alt=""></a></div>
+        <ul id="detail">
+            <li><a href="#">产品中心</a></li>
+            <li><a href="#">新闻中心</a></li>
+            <li><a href="#">更多</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+<script>
+    var as = document.querySelectorAll('#nav a');//底部的a标签集合
+    var lis = document.querySelectorAll('#list li');//全屏的li标签集合
+    var texts = document.querySelectorAll('#list .text')//.text元素结合
+    var len = as.length;//as的长度
+    var bf = 0;//上一个被选中的a的下标
+    var n = 0;//现在被选中的a的下标
+    var timer = 0;//定时器对象
+
+    //1.开启定时器，每隔3s切换图片
+    changeN();
+    timer = setInterval(add, 4000);
+
+    for (var i = 0; i < len; i++) {
+        (function (i) {
+            //2.鼠标移入图片，关闭定时器，前一张不为active，当前张为active
+            as[i].onmouseover = function () {
+                hover(i);
+            };
+            //3.鼠标移出图片，开启定时器，每隔3s切换图片
+            as[i].onmouseout = function () {
+                out(i);
+            };
+        })(i);
+    }
+
+    function add() {
+        bf = n;
+        n++;
+        if (n > len - 1) {
+            n = 0;
+        }
+        changeN();
+    }
+
+    function hover(i) {
+        clearInterval(timer);
+        bf = n;
+        n = i;
+        changeN();
+    }
+
+    function changeN() {
+        as[bf].className = '';
+        lis[bf].className = '';
+        as[n].className = 'active';
+        lis[n].className = 'active';
+    }
+
+    function out(i) {
+        timer = setInterval(add, 3000);
+    }
+</script>
+</html>
